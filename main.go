@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/kostisbourlas/gobox/p2p"
+)
 
 func main() {
-	fmt.Println("Hello from Gobox!")
+	tr := p2p.NewTCPTransport(":3030")
+
+	if err := tr.ListenAndAccept(); err != nil {
+		log.Fatal(err)
+	}
+
+	select {}
 }

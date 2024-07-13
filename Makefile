@@ -1,8 +1,11 @@
 build:
-	@go build -o gobox
+	@go build -o bin/gobox
 
 run: build
-	@./gobox
+	@./bin/gobox
 
 test:
 	@go test ./... -v
+
+format:
+	@go fmt ./...
